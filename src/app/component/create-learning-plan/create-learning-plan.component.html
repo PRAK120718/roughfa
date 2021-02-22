@@ -1,0 +1,48 @@
+<div class="settingContent">
+    <form [formGroup]="learningPlanDtlsFrm" (ngSubmit)="onClickLearningPlanDtlsSubmit(learningPlanDtlsFrm)">
+        <div class="row">
+            <div class="col-md-4">
+                <div><label for="">Name </label><label class="mandField">*</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userLearningPlanDtls.name" formControlName="name"/></div>
+            </div>
+            <div class="col-md-4">
+                <div><label for="">Description </label><label class="mandField">*</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userLearningPlanDtls.description" formControlName="description"/></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div><label for="">Milestone Name</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userMilestoneDtl.name" formControlName="milestone.name"/></div>
+            </div>
+            <div class="col-md-6">
+                <div><label for="">Milestone Start Date</label></div>
+                <div><input type="date" class="txt-primary" placeholder="" [(ngModel)]="userMilestoneDtl.start_date" formControlName="milestone.start_date"/></div>
+            </div>
+            <div class="col-md-6">
+                <div><label for="">Milestone End Date</label></div>
+                <div><input type="date" class="txt-primary" placeholder="" [(ngModel)]="userMilestoneDtl.end_date" formControlName="milestone.end_date"/></div>
+            </div>
+            <div class="col-md-6">
+                <div><label for="">MileStone Description</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userMilestoneDtl.description" formControlName="milestone.description"/></div>
+            </div>
+            <div class="col-md-6">
+                <div><label for="">Milestone Status</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userMilestoneDtl.status" formControlName="milestone.status"/></div>
+            </div>
+        </div>       
+        <!-- <div class="row justify-content-center" style="height: 25px;">
+            <div *ngIf="errorMsg != ''" class="error-msg">&nbsp;{{errorMsg}}</div>
+            <div *ngIf="errorMsg == ''" class="success-msg">&nbsp;{{successMsg}}</div>
+        </div> -->
+        <div class="row justify-content-center mt-3">
+            <button  class="btn-primary mlr-40" name="save">Create Learning Plan</button>
+            <button  class="btn-primary btn-cancel mlr-40" name="btnCancel" (click)="onClickCancel()">Cancel</button>
+        </div>
+    </form>
+</div> 
+
+
+
+

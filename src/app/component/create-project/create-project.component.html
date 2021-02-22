@@ -1,0 +1,62 @@
+<div class="settingContent">
+    <form [formGroup]="projectDtlsFrm" (ngSubmit)="onClickProjectDtlsSubmit(projectDtlsFrm)">
+        <div class="row">
+            <div class="col-md-4">
+                <div><label for="">Name </label><label class="mandField">*</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.name" formControlName="name"/></div>
+            </div>
+            <div class="col-md-4">
+                <div><label for="">Description </label><label class="mandField">*</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.description" formControlName="description"/></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div><label for="">Type </label><label class="mandField">*</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.type" formControlName="type"/></div>
+            </div>
+            <div class="col-md-4">
+                <div><label for="">Category <label class="mandField">*</label></label></div>
+                <div >
+                        <input type="text" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.category" formControlName="category"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div><label for="">Skills</label></div>
+                <div><input type="text" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.skills" formControlName="skills"/></div>
+            </div>
+            <div class="col-md-4">
+                <div><label for="">Start Date</label></div>
+                <div><input type="date" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.start_date" formControlName="start_date"/></div>
+            </div>
+            <div class="col-md-4">
+                <div><label for="">End Date</label></div>
+                <div><input type="date" class="txt-primary" placeholder="" [(ngModel)]="userProjectDtls.end_date" formControlName="end_date"/></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div><label for="">Upload Related PDF</label></div>
+                <div class="iconFileUpload">
+                    <label class="fileInputName" id="fileInputLbl">{{fileName}}</label>
+                    <input  #fileUpload123 type="file" class="fileInput" (change)="projFileUpload($event)" 
+                    accept=".pdf" multiple />
+                    <i class="fa fa-upload" (click)="fileInputClick($event)"></i>
+                </div>
+            </div>
+        </div>        
+        <!-- <div class="row justify-content-center" style="height: 25px;">
+            <div *ngIf="errorMsg != ''" class="error-msg">&nbsp;{{errorMsg}}</div>
+            <div *ngIf="errorMsg == ''" class="success-msg">&nbsp;{{successMsg}}</div>
+        </div> -->
+        <div class="row justify-content-center mt-3">
+            <button  class="btn-primary mlr-40" name="save">Create Project</button>
+            <button  class="btn-primary btn-cancel mlr-40" name="btnCancel" (click)="onClickCancel()">Cancel</button>
+        </div>
+    </form>
+</div> 
+
+
+
